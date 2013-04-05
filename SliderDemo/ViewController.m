@@ -29,8 +29,9 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)sliderBChanged:(id)sender {
-    float x = _sliderB.value * 3.02;
-    _labelB.frame = CGRectMake(_sliderB.value, 120, 50, 20);
+    CGPoint point = _labelB.center;
+    point.x = _sliderB.value * _sliderB.frame.size.width / _sliderB.maximumValue + 20;
+    _labelB.center = point;
     _labelB.text = [NSString stringWithFormat:@"%.2f",_sliderB.value];
 }
 @end
